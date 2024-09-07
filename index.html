@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <style type="text/css">
+         .box{
+             background-image: url(snich.webp);
+             background-size: 100% 100%;
+             width: 100px;
+             height: 100px;
+             position: absolute;
+             transition: 1s;
+             left:0px;
+             top:0px;
+         }
+    </style>
+
+</head>
+<body>
+
+	<h1>очков: <h1 class="ochkotxt"></h1> </h1>
+
+
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+    <div class="box">
+    </div>
+ 
+
+ 
+
+
+ <script type="text/javascript"> 
+
+
+     let boxes = document.querySelectorAll('.box')
+     let ochko = document.querySelector(".ochkotxt")
+     let ochki = 0
+
+      ochko.innerHTML = ochki
+
+
+     function move(){
+         for(let i=0 ; i<boxes.length; i = i + 1 ){
+             boxes[i].style.left = randomizer() + "px"
+             boxes[i].style.top = randomizer() + "px"
+
+              boxes[i].onclick = function(){
+                  boxes[i].style.display = "none"
+                  ochki = ochki + 1
+      	ochko.innerHTML = ochki
+              }
+
+         }
+     }
+ 
+     function randomizer(){
+         let number = Math.round(Math.random() * 1000)
+         return number;
+     }
+
+     setInterval(move, 2000)
+
+ </script>
+
+</body>
+</html>
